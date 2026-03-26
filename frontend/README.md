@@ -1,24 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+SummaryMyNote 
 
-## Getting Started
+An AI-powered document assistant that summarizes PDF and Word documents instantly.
 
-First, run the development server:
+Live Demo
+[https://feytiapp.vercel.app/]
 
-```bash
+How It Works
+1. User uploads a PDF or Word (.docx) document
+2. Backend extracts the text using pdf-parse and mammoth
+3. Text is sent to Groq AI (LLaMA3 model) for analysis
+4. AI returns title, author, summary and key points
+5. Results are displayed on a clean interface
+
+Tech Stack
+ Frontend: Next.js + Tailwind CSS (deployed on Vercel)
+Backend: Node.js + Express (deployed on Render)
+AI: Groq API (LLaMA3-8b model)
+
+Run Locally
+
+ Backend
+cd backend
+npm install
+
+ Add your GROQ_API_KEY to .env file
+node index.js
+
+Frontend
+cd frontend
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-
-
+Folder Structure
+summarymynote/
+├── backend/
+│   ├── routes/
+│   │   └── upload.js
+│   ├── utils/
+│   │   ├── extractText.js
+│   │   └── groq.js
+│   ├── .env
+│   └── index.js
+└── frontend/
+    └── app/
+        └── page.js

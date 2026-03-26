@@ -94,13 +94,16 @@ Tasks:
 1. title: The actual document title. If not found, write "Unknown".
 2. author: The author name. If not found, write "Not specified".
 3. summary: ${summaryInstruction}
-4. main_content: Identify every major section or topic. For EACH one write exactly 1 short sentence of no more than 15 words. Be direct and to the point.
+4. main_content: Identify every major section or topic. For EACH section, write exactly 1 sentence of 15-20 words that answers what that section says using document-specific details.
 5. key_ideas: A list of exactly 4 key ideas or takeaways from the document. Each one must be a single clear sentence.
 
 Rules:
 - Do NOT hallucinate. Only use information from the document.
 - Do NOT skip or truncate sections.
 - Write in clear, professional English.
+- Each main content summary must be 15-20 words.
+- Do not repeat section names as summaries. Write what the section actually states.
+- Include at least one concrete detail from the section when available (for example criteria, amount, rule, timeline, role, or process).
 - Do NOT use double quotes inside any string value. Use single quotes or rephrase instead.
 - Return ONLY raw JSON — no markdown, no backticks, no extra text.
 
